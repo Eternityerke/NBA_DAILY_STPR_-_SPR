@@ -9,7 +9,7 @@ Thanks for Darryl Blackport's code and Nathan Walker's SPR(Simple Player Rating)
 
       pip install numpy
 
-      pip install nba_stats_tracking    # Dyrral Blackport's code, very useful
+      pip install nba_stats_tracking    # Darryl Blackport's code, very useful
      
       """
 
