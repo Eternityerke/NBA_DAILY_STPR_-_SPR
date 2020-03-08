@@ -1,5 +1,5 @@
 # NBA_DAILY_STPR_-_SPR
-Thanks for Dyrral Blackport's code and Nathan Walker's SPR(Simple Player Rating)
+Thanks for Darryl Blackport's code and Nathan Walker's SPR(Simple Player Rating)
 
 1. Prepare
 
@@ -85,5 +85,5 @@ And in DataFrame 'result', you can insert some easy code to let it shown in the 
      
 4. Finale
      
-Another great appreciation for Dyrral Blackport and Nathan Walker.
+Another great appreciation for Darryl Blackport and Nathan Walker.
      
