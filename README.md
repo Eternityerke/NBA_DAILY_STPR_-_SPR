@@ -3,12 +3,15 @@ Thanks for Dyrral Blackport's code and Nathan Walker's SPR(Simple Player Rating)
 
 1. Prepare
 
-pip install pandas
+      """
+     
+      pip install pandas
 
-pip install numpy
+      pip install numpy
 
-pip install nba_stats_tracking   # Dyrral Blackport's code, very useful
-
+      pip install nba_stats_tracking    # Dyrral Blackport's code, very useful
+     
+      """
 
 2. Only Thing to Do
 
@@ -18,13 +21,14 @@ For example, if you want to know what happened in 03/07/2020. Just input the dat
 
 (If you want one day's SPR data, the input in 'date_from' SHOULD be same with it in 'date_to')
 
-"""
+     """
 
-date_from = '03/01/2020'
-date_to = '03/01/2020'
+      date_from = '03/01/2020'
+
+      date_to = '03/01/2020'
 
 
-"""
+     """
 
 Then you can wait for your device running and get the result you want.
 
@@ -32,9 +36,9 @@ Then you can wait for your device running and get the result you want.
 
 If you also want some other data displayed in 2.csv, you can find the staff you want in the list 'staff' as shown below:
 
-"""
+    """
 
-staff = ['PLAYER_NAME',
+    staff = ['PLAYER_NAME',
      'TEAM_ABBREVIATION',
      'DRIVES',
      'DRIVE_PASSES',
@@ -77,9 +81,9 @@ staff = ['PLAYER_NAME',
      
      """
      
-     And in DataFrame 'result', you can insert some easy code to let it shown in the csv.
+And in DataFrame 'result', you can insert some easy code to let it shown in the csv.
      
-     4. Finale
+4. Finale
      
-     Another great appreciation for Dyrral Blackport and Nathan Walker.
+Another great appreciation for Dyrral Blackport and Nathan Walker.
      
