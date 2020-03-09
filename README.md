@@ -1,5 +1,5 @@
 # NBA_DAILY_STPR_-_SPR
-Thanks for Dyrral Blackport's code and Nathan Walker's SPR(Simple Player Rating)
+Thanks for Darryl Blackport's code and Nathan Walker's SPR(Simple Player Rating)
 
 1. Prepare
 
@@ -9,7 +9,7 @@ Thanks for Dyrral Blackport's code and Nathan Walker's SPR(Simple Player Rating)
 
       pip install numpy
 
-      pip install nba_stats_tracking    # Dyrral Blackport's code, very useful
+      pip install nba_stats_tracking    # Darryl Blackport's code, very useful
      
       """
 
@@ -17,7 +17,7 @@ Thanks for Dyrral Blackport's code and Nathan Walker's SPR(Simple Player Rating)
 
 Edit the date you need to caculate SPR or STPR (Simulated-per-100-poss Tracking Player rating: Something I invented to estimate player's attribution of one single game with Single game's Tracking/Hustle stats from NBA.com in consideration and caculation)
 
-For example, if you want to know what happened in 03/07/2020. Just input the data at the below blank and run this programme, and then you will get the SPR and STPR in 2.CSV
+For example, if you want to know what happened in 03/01/2020. Just input the data at the below blank and run this programme, and then you will get the SPR and STPR in 2.CSV
 
 (If you want one day's SPR data, the input in 'date_from' SHOULD be same with it in 'date_to')
 
@@ -85,5 +85,5 @@ And in DataFrame 'result', you can insert some easy code to let it shown in the 
      
 4. Finale
      
-Another great appreciation for Dyrral Blackport and Nathan Walker.
+Another great appreciation for Darryl Blackport and Nathan Walker.
      
