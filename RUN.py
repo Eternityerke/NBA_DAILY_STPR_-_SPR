@@ -325,7 +325,7 @@ staff = ['PLAYER_NAME',
      'TS_PCT',
      'USG_PCT',
      'PACE',
-     'MIN_c',
+     'MIN_ic',
      'W_c']
 
 stats = pd.read_csv("./1.csv", usecols=staff)
@@ -350,13 +350,13 @@ stats['rawSTPR'] = stats.apply(lambda x:  0.24 * x['DRIVE_PASSES'] - 0.24 * x['D
                                 + 1.44 * x['STL_y'] + 0.08 * x['BLK_y']
                                 + 0.40 * x['DREB_y'] - 2.00 * x['DEF_RIM_FGM'] + 1.04 * x['DEF_RIM_FGA'], axis = 1)
 
-stats['STPR'] = stats.apply(lambda x: x['rawSTPR'] / (x['PACE'] * x['MIN_c'] / 48) * 100 - 5, axis = 1)
+stats['STPR'] = stats.apply(lambda x: x['rawSTPR'] / (x['PACE'] * x['MIN_ic'] / 48) * 100 - 5, axis = 1)
 
 stats['SPR'] = stats.apply(lambda x: x['PTS'] - x['FGA_ic'] + 0.2 * x['FG3A'] - 0.3 * x['FTA']
                             + 0.3 * x['OREB'] + 0.2 * x['DREB_y'] + 0.5 * x['AST_y']
                             + 1.5 * x['STL_y'] + 0.7 * x['BLK_y'] - 1.2 * x['TOV'], axis = 1)
 
-result['MIN'] = stats['MIN_c']
+result['MIN'] = stats['MIN_ic']
 result['TS'] = stats['TS_PCT']
 result['USG'] = stats['USG_PCT']
 result['SPR'] = stats['SPR']
