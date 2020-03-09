@@ -77,7 +77,7 @@ def generate_boxscore_game_logs(measure_type, date_from, date_to):
     game_logs = []
     for dt in rrule(DAILY, dtstart=start_date, until=end_date):
         date = dt.strftime('%m/%d/%Y')
-        team_id_game_id_map = utils.get_team_id_game_id_map_for_date(date)
+        team_id_game_id_map, team_id_opponent_team_id_map = utils.get_team_id_maps_for_date(date)
         if len(team_id_game_id_map.values()) == 0:
             return game_logs
 
@@ -167,7 +167,7 @@ def generate_hustle_game_logs(date_from, date_to):
     game_logs = []
     for dt in rrule(DAILY, dtstart=start_date, until=end_date):
         date = dt.strftime('%m/%d/%Y')
-        team_id_game_id_map = utils.get_team_id_game_id_map_for_date(date)
+        team_id_game_id_map, team_id_opponent_team_id_map = utils.get_team_id_maps_for_date(date)
         if len(team_id_game_id_map.values()) == 0:
             return game_logs
 
@@ -215,8 +215,8 @@ Please input the date at below.
 """
 
 entity_type = 'player'
-date_from = '03/01/2020'
-date_to = '03/01/2020'
+date_from = '03/07/2020'
+date_to = '03/07/2020'
 Drives = Defense = CatchShoot = Passing = Possessions = PullUpShot = Efficiency = Hustle = Base = Advanced = pd.DataFrame()
 
 """
@@ -274,7 +274,7 @@ game_logs = generate_boxscore_game_logs(measure_type, date_from, date_to)
 for game_log in game_logs:
     Advanced = Advanced.append(game_log, ignore_index = True)
     
-m = ['PLAYER_ID','PLAYER_NAME','SEASON','TEAM_ABBREVIATION','TEAM_ID','GAME_ID']
+m = ['PLAYER_ID','PLAYER_NAME','SEASON','TEAM_ABBREVIATION','TEAM_ID','GAME_ID'，'OPPONENT_TEAM_ID']
 n = ['PLAYER_ID','PLAYER_NAME','SEASON','TEAM_ABBREVIATION','TEAM_ID']
 a = pd.merge(Drives, Defense, how='left', on= m , suffixes = ('_x','_y'))
 b = pd.merge(a, CatchShoot, how='left', on= m , suffixes = ('_x','_y'))
@@ -352,7 +352,7 @@ stats['rawSTPR'] = stats.apply(lambda x:  0.24 * x['DRIVE_PASSES'] - 0.24 * x['D
 
 stats['STPR'] = stats.apply(lambda x: x['rawSTPR'] / (x['PACE'] * x['MIN_c'] / 48) * 100 - 5, axis = 1)
 
-stats['SPR'] = stats.apply(lambda x: x['PTS'] - x['FGA_ic'] - 0.8 * x['FG3A'] - 0.3 * x['FTA']
+stats['SPR'] = stats.apply(lambda x: x['PTS'] - x['FGA_ic'] + 0.2 * x['FG3A'] - 0.3 * x['FTA']
                             + 0.3 * x['OREB'] + 0.2 * x['DREB_y'] + 0.5 * x['AST_y']
                             + 1.5 * x['STL_y'] + 0.7 * x['BLK_y'] - 1.2 * x['TOV'], axis = 1)
 
