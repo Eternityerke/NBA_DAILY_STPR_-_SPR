@@ -274,7 +274,7 @@ game_logs = generate_boxscore_game_logs(measure_type, date_from, date_to)
 for game_log in game_logs:
     Advanced = Advanced.append(game_log, ignore_index = True)
     
-m = ['PLAYER_ID','PLAYER_NAME','SEASON','TEAM_ABBREVIATION','TEAM_ID','GAME_ID'，'OPPONENT_TEAM_ID']
+m = ['PLAYER_ID','PLAYER_NAME','SEASON','TEAM_ABBREVIATION','TEAM_ID','GAME_ID','OPPONENT_TEAM_ID']
 n = ['PLAYER_ID','PLAYER_NAME','SEASON','TEAM_ABBREVIATION','TEAM_ID']
 a = pd.merge(Drives, Defense, how='left', on= m , suffixes = ('_x','_y'))
 b = pd.merge(a, CatchShoot, how='left', on= m , suffixes = ('_x','_y'))
